@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bitgo Research Onchain Data Hub - Architecture</title>
+<title>Bitgo Research Onchain Data Hub - 3&nbsp; Architecture</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/gcp.html" rel="next">
-<link href="../chapters/load.html" rel="prev">
+<link href="../chapters/development.html" rel="next">
+<link href="../chapters/services.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Architecture</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-title">Architecture</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -98,86 +98,31 @@ ul.task-list li input[type="checkbox"] {
   <a href="../index.html" class="sidebar-item-text sidebar-link">Intro</a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../chapters/data.html" class="sidebar-item-text sidebar-link">Data Sources</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/github-archives.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Github Archives</span></a>
+  <a href="../chapters/data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Sources</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/github-api.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Github API</span></a>
+  <a href="../chapters/services.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Services</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/messari.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Messari</span></a>
+  <a href="../chapters/architecture.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Architecture</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/dune.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dune Analytics</span></a>
+  <a href="../chapters/development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Development</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/defillama.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Defi Llama</span></a>
+  <a href="../chapters/deployment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Deployment</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../chapters/services.html" class="sidebar-item-text sidebar-link">Services</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/extract.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Extract</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/transform.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Transform</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/load.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Load</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../chapters/architecture.html" class="sidebar-item-text sidebar-link active">Architecture</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/gcp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">GCP</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/workflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Workflow</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/references.html" class="sidebar-item-text sidebar-link">References</a>
@@ -195,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Architecture</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-title">Architecture</span></h1>
 </div>
 
 
@@ -355,13 +300,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/load.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Load</span></span>
+      <a href="../chapters/services.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Services</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/gcp.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">GCP</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/development.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Development</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
