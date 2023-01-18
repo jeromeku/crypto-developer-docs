@@ -1,0 +1,33 @@
+on:
+  push:
+    branches: main
+
+name: Render and Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          # To install LaTeX to build PDF book 
+          tinytex: true 
+          # uncomment below and fill to pin a version
+          # version: 0.9.600
+      - name: Render docs
+        run: quarto render
+
+      - name: Check status before autocommit
+        run: git status
+
+      - name : Autocommit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: render committed docs
+      
+      - name: Check status after autocommit
+        run: git status

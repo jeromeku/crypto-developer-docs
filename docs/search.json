@@ -39,6 +39,6 @@
     "href": "chapters/data.html",
     "title": "3  Data Sources",
     "section": "",
-    "text": "GH Archives GH Archives is an hourly archive of all events on Github published as csv files and BigQuery tables.\nCoingecko\nDefiLlama\nDune\nTheGraph\nMessari\nDappRadar\nBlock Explorers"
+    "text": "GH Archives GH Archives is an hourly archive of all events on Github published as csv files and BigQuery tables.\nCoingecko\nDefiLlama\nMessari\nDune\nTheGraph\nDappRadar\nBlock Explorers\n\nEtherscan\nPolygonScan\n…"
   }
 ]
