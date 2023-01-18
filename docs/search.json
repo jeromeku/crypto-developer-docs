@@ -7,87 +7,87 @@
     "text": "Introduction\n\nDocumentation for Bitgo Research’s various on-chain data and services.\n\nCrypto Developer Tracker\n\n\nwBTC Analytics (pending)"
   },
   {
-    "objectID": "chapters/data.html#gh-archives",
-    "href": "chapters/data.html#gh-archives",
-    "title": "1  Data Sources",
-    "section": "GH Archives",
-    "text": "GH Archives\nGH Archives is an hourly archive of all events on Github published as csv files and BigQuery tables."
-  },
-  {
-    "objectID": "chapters/data.html#coingecko",
-    "href": "chapters/data.html#coingecko",
-    "title": "1  Data Sources",
-    "section": "Coingecko",
-    "text": "Coingecko"
-  },
-  {
-    "objectID": "chapters/data.html#defillama",
-    "href": "chapters/data.html#defillama",
-    "title": "1  Data Sources",
-    "section": "DefiLlama",
-    "text": "DefiLlama"
-  },
-  {
-    "objectID": "chapters/data.html#dune",
-    "href": "chapters/data.html#dune",
-    "title": "1  Data Sources",
-    "section": "Dune",
-    "text": "Dune"
-  },
-  {
-    "objectID": "chapters/data.html#thegraph",
-    "href": "chapters/data.html#thegraph",
-    "title": "1  Data Sources",
-    "section": "TheGraph",
-    "text": "TheGraph"
-  },
-  {
-    "objectID": "chapters/data.html#messari",
-    "href": "chapters/data.html#messari",
-    "title": "1  Data Sources",
-    "section": "Messari",
-    "text": "Messari"
-  },
-  {
-    "objectID": "chapters/data.html#dappradar",
-    "href": "chapters/data.html#dappradar",
-    "title": "1  Data Sources",
-    "section": "DappRadar",
-    "text": "DappRadar"
-  },
-  {
-    "objectID": "chapters/data.html#block-explorers",
-    "href": "chapters/data.html#block-explorers",
-    "title": "1  Data Sources",
-    "section": "Block Explorers",
-    "text": "Block Explorers"
-  },
-  {
     "objectID": "chapters/workflow.html#development",
     "href": "chapters/workflow.html#development",
-    "title": "2  Workflow",
+    "title": "1  Workflow",
     "section": "Development",
     "text": "Development\n\nPython scripts\nJupyter notebooks\nPapermill for parametrized execution of notebooks"
   },
   {
     "objectID": "chapters/workflow.html#deployment",
     "href": "chapters/workflow.html#deployment",
-    "title": "2  Workflow",
+    "title": "1  Workflow",
     "section": "Deployment",
     "text": "Deployment\n\nScripts / notebooks are refactored into functions that are mapped to REST API using FastAPI\n\nServices are structured as ETL pipelines that:\n\nPulls data from APIs (e.g., Messari), query from a warehouse (e.g., BigQuery), or other data ingestion code;\nPerforms data munging\nExport to Google Cloud Storage or BigQuery\n\n\nThese services are then containerized using Docker then deployed as serverless microservices using Google Cloud Run\nThis eases addition of new data sources and data munging code to the data pipeline."
   },
   {
     "objectID": "chapters/workflow.html#orchestration",
     "href": "chapters/workflow.html#orchestration",
-    "title": "2  Workflow",
+    "title": "1  Workflow",
     "section": "Orchestration",
     "text": "Orchestration\n\nCurrently Google Cloud Scheduler is used to refresh data sources at various intervals by calling respective Cloud Run endpoints\n\nRaw events table needs to be updated when\n\nNew repos are added to Electric Capital Ecosystem\nNew events for existing repos\n\nAll downstream data assets then need to be updated\n\nEvaluating workflow tools (Prefect, Dagster) as potential replacement."
   },
   {
     "objectID": "chapters/architecture.html#github-activity-tracker",
     "href": "chapters/architecture.html#github-activity-tracker",
-    "title": "3  Architecture",
+    "title": "2  Architecture",
     "section": "Github Activity Tracker",
     "text": "Github Activity Tracker\nWorkflow is as follows:\n\nExtract\n\nRaw data is ingested from\n\nGH Archive Github Events public BigQuery table: events are filtered for organizations and repos from Capital’s cryptoecosystem tracker\nMessari: Assets API and protocols pages contains categories and other useful labels / tags\nCoingecko: Publicly traded token data including categories\nDefiLlama: API (official and unofficial) has useful data on protocols, chains, categories, etc.\nGithub API: Can be used to pull additional metadata on orgs, repos, and committers\n\n\n\n\nTransform\n\ndbt is used to transform raw GH Archive github events to various views\n\nAll events details are embedded in a json blob column and relevant event info for pulls, pushes, etc. needs to be manually extracted\n\nMetadata including categories, tags, chains, etc. are extracted from other data sources\nData cleaning pipeline then normalizes and merges data sources into a single table\n\n\n\nLoad\n\nCleaned table is uploaded to BigQuery\nCleaned / enriched data includes\n\nCategories / Sub-categories: DeFi, NFT, gaming; DEX, money market, derivatives, etc.\nDeveloper activity\n\nIssues\n\nOpen / Close\nCounts\n\nPull Requests\nPush / Commits\nStars\nCommitter Stats\n\nLocation\nCommit counts\n\nRepo stats\n\nTags\nLanguages\nForks\n\n\n\nThis enables various analytics and visualizations – see OSS Insight for example.\n\n\n\nAnalytics\n\nDashboard then pulls from the final cleaned table to visualize useful stats\n\nStreamlit\nPlotly Dash\nApache Superset"
+  },
+  {
+    "objectID": "chapters/data.html#gh-archives",
+    "href": "chapters/data.html#gh-archives",
+    "title": "3  Data Sources",
+    "section": "GH Archives",
+    "text": "GH Archives\nGH Archives is an hourly archive of all events on Github published as csv files and BigQuery tables."
+  },
+  {
+    "objectID": "chapters/data.html#coingecko",
+    "href": "chapters/data.html#coingecko",
+    "title": "3  Data Sources",
+    "section": "Coingecko",
+    "text": "Coingecko"
+  },
+  {
+    "objectID": "chapters/data.html#defillama",
+    "href": "chapters/data.html#defillama",
+    "title": "3  Data Sources",
+    "section": "DefiLlama",
+    "text": "DefiLlama"
+  },
+  {
+    "objectID": "chapters/data.html#dune",
+    "href": "chapters/data.html#dune",
+    "title": "3  Data Sources",
+    "section": "Dune",
+    "text": "Dune"
+  },
+  {
+    "objectID": "chapters/data.html#thegraph",
+    "href": "chapters/data.html#thegraph",
+    "title": "3  Data Sources",
+    "section": "TheGraph",
+    "text": "TheGraph"
+  },
+  {
+    "objectID": "chapters/data.html#messari",
+    "href": "chapters/data.html#messari",
+    "title": "3  Data Sources",
+    "section": "Messari",
+    "text": "Messari"
+  },
+  {
+    "objectID": "chapters/data.html#dappradar",
+    "href": "chapters/data.html#dappradar",
+    "title": "3  Data Sources",
+    "section": "DappRadar",
+    "text": "DappRadar"
+  },
+  {
+    "objectID": "chapters/data.html#block-explorers",
+    "href": "chapters/data.html#block-explorers",
+    "title": "3  Data Sources",
+    "section": "Block Explorers",
+    "text": "Block Explorers"
   }
 ]

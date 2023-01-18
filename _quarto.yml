@@ -8,7 +8,6 @@ book:
   date: "1/16/2023"
   chapters:
     - index.qmd
-    - chapters/data.qmd
     - chapters/workflow.qmd
       # chapters:
       #   - chapters/github-archives.qmd
@@ -27,6 +26,7 @@ book:
       #   - chapters/workflow.qmd
     # - chapters/development.qmd
     # - chapters/deployment.qmd
+    - chapters/data.qmd
     - chapters/references.qmd
   sidebar: 
     background: "#F5F5F5"
