@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html#intro",
+    "href": "index.html#intro",
+    "title": "Bitgo Research Onchain Data Hub",
+    "section": "Intro",
+    "text": "Intro\n\nDetails the various data sources and services underlying the Bitgo Research Onchain Data Hub."
+  },
+  {
+    "objectID": "chapters/data.html#gh-archives",
+    "href": "chapters/data.html#gh-archives",
+    "title": "Data Sources",
+    "section": "GH Archives",
+    "text": "GH Archives\nGH Archives is an hourly archive of all events on Github."
+  },
+  {
+    "objectID": "chapters/data.html#defillama",
+    "href": "chapters/data.html#defillama",
+    "title": "Data Sources",
+    "section": "DefiLlama",
+    "text": "DefiLlama"
+  },
+  {
+    "objectID": "chapters/data.html#dune",
+    "href": "chapters/data.html#dune",
+    "title": "Data Sources",
+    "section": "Dune",
+    "text": "Dune"
+  },
+  {
+    "objectID": "chapters/data.html#thegraph",
+    "href": "chapters/data.html#thegraph",
+    "title": "Data Sources",
+    "section": "TheGraph",
+    "text": "TheGraph"
+  },
+  {
+    "objectID": "chapters/data.html#messari",
+    "href": "chapters/data.html#messari",
+    "title": "Data Sources",
+    "section": "Messari",
+    "text": "Messari"
+  },
+  {
+    "objectID": "chapters/data.html#dappradar",
+    "href": "chapters/data.html#dappradar",
+    "title": "Data Sources",
+    "section": "DappRadar",
+    "text": "DappRadar"
+  },
+  {
+    "objectID": "chapters/data.html#block-explorers",
+    "href": "chapters/data.html#block-explorers",
+    "title": "Data Sources",
+    "section": "Block Explorers",
+    "text": "Block Explorers"
+  },
+  {
+    "objectID": "chapters/services.html#extract",
+    "href": "chapters/services.html#extract",
+    "title": "Services",
+    "section": "Extract",
+    "text": "Extract"
+  },
+  {
+    "objectID": "chapters/services.html#transform",
+    "href": "chapters/services.html#transform",
+    "title": "Services",
+    "section": "Transform",
+    "text": "Transform"
+  },
+  {
+    "objectID": "chapters/services.html#load",
+    "href": "chapters/services.html#load",
+    "title": "Services",
+    "section": "Load",
+    "text": "Load"
+  },
+  {
+    "objectID": "chapters/architecture.html",
+    "href": "chapters/architecture.html",
+    "title": "Architecture",
+    "section": "",
+    "text": "High-level Architecture (preliminary)"
+  }
+]
