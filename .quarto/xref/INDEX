@@ -1,0 +1,104 @@
+{
+  "index.qmd": {
+    "index.html": "8c068076"
+  },
+  "intro.qmd": {
+    "intro.html": "09b9fffa"
+  },
+  "summary.qmd": {
+    "summary.html": "bd97062f"
+  },
+  "references.qmd": {
+    "references.html": "a195416e"
+  },
+  "data.qmd": {
+    "data.html": "e57be81b"
+  },
+  "services.qmd": {
+    "services.html": "753f5390"
+  },
+  "architecture.qmd": {
+    "architecture.html": "ec1643c9"
+  },
+  "github-archives.qmd": {
+    "github-archives.html": "03c55dc1"
+  },
+  "github-api.qmd": {
+    "github-api.html": "1b99526a"
+  },
+  "messari.qmd": {
+    "messari.html": "f73bde2e"
+  },
+  "dune.qmd": {
+    "dune.html": "90ef6c4b"
+  },
+  "defillama.qmd": {
+    "defillama.html": "60b7784e"
+  },
+  "extract.qmd": {
+    "extract.html": "5668c7c2"
+  },
+  "transform.qmd": {
+    "transform.html": "19f2c169"
+  },
+  "load.qmd": {
+    "load.html": "a6885347"
+  },
+  "gcp.qmd": {
+    "gcp.html": "b7f21cc2"
+  },
+  "workflow.qmd": {
+    "workflow.html": "e00fb603"
+  },
+  "chapters/intro.qmd": {
+    "intro.html": "bfe00f61"
+  },
+  "chapters/data.qmd": {
+    "data.html": "6faec2a4"
+  },
+  "chapters/github-archives.qmd": {
+    "github-archives.html": "cc1cb01b"
+  },
+  "chapters/github-api.qmd": {
+    "github-api.html": "13929cc9"
+  },
+  "chapters/messari.qmd": {
+    "messari.html": "9b8039b9"
+  },
+  "chapters/dune.qmd": {
+    "dune.html": "f483d5dd"
+  },
+  "chapters/defillama.qmd": {
+    "defillama.html": "f718801a"
+  },
+  "chapters/services.qmd": {
+    "services.html": "fc8887a4"
+  },
+  "chapters/extract.qmd": {
+    "extract.html": "fb221466"
+  },
+  "chapters/transform.qmd": {
+    "transform.html": "534577d5"
+  },
+  "chapters/load.qmd": {
+    "load.html": "cc35726d"
+  },
+  "chapters/architecture.qmd": {
+    "architecture.html": "c25cdc39"
+  },
+  "chapters/gcp.qmd": {
+    "gcp.html": "c8c9ada1"
+  },
+  "chapters/workflow.qmd": {
+    "workflow.html": "01bd20ad"
+  },
+  "chapters/references.qmd": {
+    "references.html": "4f80af13"
+  },
+  "chapters/development.qmd": {
+    "development.html": "eb55eb93"
+  },
+  "chapters/deployment.qmd": {
+    "deployment.html": "b0911561"
+  }
+}

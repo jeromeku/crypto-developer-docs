@@ -1,0 +1,48 @@
+project:
+  type: book
+
+book:
+  title: "Bitgo Research Onchain Data Hub"
+  author: "Jerome Ku"
+  date: "1/16/2023"
+  chapters:
+    - index.qmd
+    - chapters/data.qmd
+      # chapters:
+      #   - chapters/github-archives.qmd
+      #   - chapters/github-api.qmd
+      #   - chapters/messari.qmd
+      #   - chapters/dune.qmd
+      #   - chapters/defillama.qmd
+    - chapters/services.qmd
+      # chapters: 
+      #   - chapters/extract.qmd
+      #   - chapters/transform.qmd
+      #   - chapters/load.qmd
+    - chapters/architecture.qmd
+      # chapters: 
+      #   - chapters/gcp.qmd
+      #   - chapters/workflow.qmd
+    - chapters/development.qmd
+    - chapters/deployment.qmd
+    - chapters/references.qmd
+  sidebar: 
+    background: "#F5F5F5"
+    search: true
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: 
+      light: cosmo
+    backgroundcolor: "#F5F5F5"
+    toc: true
+    toc-depth: 0
+    number-sections: false
+    number-depth: 0
+  pdf:
+    documentclass: scrreprt
+
+
+
