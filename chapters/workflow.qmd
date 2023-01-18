@@ -7,9 +7,13 @@
 
 ## Deployment
 - Scripts / notebooks are refactored into functions that are mapped to REST API using [FastAPI](https://fastapi.tiangolo.com/) 
-- This service is then containerized using Docker then deployed (serverless) using Google Cloud Run
-- This eases addition of new data sources and data munging code to be incorporated into the data pipeline
+    - Services are structured as ETL pipelines that:
+        - Pulls data from APIs (e.g., Messari), query from a warehouse (e.g., BigQuery), or other data ingestion code; 
+        - Performs data munging
+        - Export to Google Cloud Storage or BigQuery
+- These services are then containerized using Docker then deployed as serverless microservices using [Google Cloud Run](https://cloud.google.com/run/)
+- This eases addition of new data sources and data munging code to the data pipeline.
 
 ## Orchestration
-- Currently Google Cloud Scheduler is used to refresh data sources at various intervals by calling respective Cloud Run endpoints
-- Evaluating workflow tools (Prefect, Dagster) as potential replacement.
+- Currently [Google Cloud Scheduler](https://cloud.google.com/scheduler) is used to refresh data sources at various intervals by calling respective Cloud Run endpoints
+- Evaluating workflow tools ([Prefect](https://www.prefect.io/opensource/v2/), [Dagster](https://dagster.io/)) as potential replacement.

@@ -156,16 +156,24 @@ ul.task-list li input[type="checkbox"] {
 <section id="deployment" class="level2">
 <h2 class="anchored" data-anchor-id="deployment">Deployment</h2>
 <ul>
-<li>Scripts / notebooks are refactored into functions that are mapped to REST API using <a href="https://fastapi.tiangolo.com/">FastAPI</a></li>
-<li>This service is then containerized using Docker then deployed (serverless) using Google Cloud Run</li>
-<li>This eases addition of new data sources and data munging code to be incorporated into the data pipeline</li>
+<li>Scripts / notebooks are refactored into functions that are mapped to REST API using <a href="https://fastapi.tiangolo.com/">FastAPI</a>
+<ul>
+<li>Services are structured as ETL pipelines that:
+<ul>
+<li>Pulls data from APIs (e.g., Messari), query from a warehouse (e.g., BigQuery), or other data ingestion code;</li>
+<li>Performs data munging</li>
+<li>Export to Google Cloud Storage or BigQuery</li>
+</ul></li>
+</ul></li>
+<li>These services are then containerized using Docker then deployed as serverless microservices using <a href="https://cloud.google.com/run/">Google Cloud Run</a></li>
+<li>This eases addition of new data sources and data munging code to the data pipeline.</li>
 </ul>
 </section>
 <section id="orchestration" class="level2">
 <h2 class="anchored" data-anchor-id="orchestration">Orchestration</h2>
 <ul>
-<li>Currently Google Cloud Scheduler is used to refresh data sources at various intervals by calling respective Cloud Run endpoints</li>
-<li>Evaluating workflow tools (Prefect, Dagster) as potential replacement.</li>
+<li>Currently <a href="https://cloud.google.com/scheduler">Google Cloud Scheduler</a> is used to refresh data sources at various intervals by calling respective Cloud Run endpoints</li>
+<li>Evaluating workflow tools (<a href="https://www.prefect.io/opensource/v2/">Prefect</a>, <a href="https://dagster.io/">Dagster</a>) as potential replacement.</li>
 </ul>
 
 

@@ -1,5 +1,4 @@
 # Architecture
-
 ![](../resources/images/architecture.png)
 
 ## Github Activity Tracker
@@ -8,18 +7,38 @@ Workflow is as follows:
 ### Extract
 - Raw data is ingested from
     - GH Archive Github Events public BigQuery table: events are filtered for organizations and repos from Capital's cryptoecosystem tracker
-    - Messari
-    - Coingecko
-    - DefiLlama
+    - Messari: Assets API and protocols pages contains categories and other useful labels / tags
+    - Coingecko: Publicly traded token data including categories
+    - DefiLlama: API (official and unofficial) has useful data on protocols, chains, categories, etc.
+    - Github API: Can be used to pull additional metadata on orgs, repos, and committers
 
 ### Transform
-- dbt is used to transform raw GH Archive github events to various views
+- [dbt](https://www.getdbt.com/) is used to transform raw GH Archive github events to various views
     - All events details are embedded in a json blob column and relevant event info for pulls, pushes, etc. needs to be manually extracted
 - Metadata including categories, tags, chains, etc. are extracted from other data sources
 - Data cleaning pipeline then normalizes and merges data sources into a single table  
 
 ### Load
 - Cleaned table is uploaded to BigQuery
+- Cleaned / enriched data includes
+    - Categories / Sub-categories: DeFi, NFT, gaming; DEX, money market, derivatives, etc.
+    - Developer activity
+        - Issues
+            - Open / Close
+            - Counts
+        - Pull Requests
+        - Push / Commits
+        - Stars
+        - Committer Stats
+            - Location
+            - Commit counts
+        - Repo stats
+            - Tags
+            - Languages
+            - Forks
 
 ### Analytics
 - Dashboard then pulls from the final cleaned table to visualize useful stats
+    - [Streamlit](https://streamlit.io/)
+    - [Plotly Dash](https://dash.plotly.com/)
+    - [Apache Superset](https://superset.apache.org/)

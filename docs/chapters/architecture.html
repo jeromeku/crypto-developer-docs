@@ -155,16 +155,17 @@ ul.task-list li input[type="checkbox"] {
 <li>Raw data is ingested from
 <ul>
 <li>GH Archive Github Events public BigQuery table: events are filtered for organizations and repos from Capital’s cryptoecosystem tracker</li>
-<li>Messari</li>
-<li>Coingecko</li>
-<li>DefiLlama</li>
+<li>Messari: Assets API and protocols pages contains categories and other useful labels / tags</li>
+<li>Coingecko: Publicly traded token data including categories</li>
+<li>DefiLlama: API (official and unofficial) has useful data on protocols, chains, categories, etc.</li>
+<li>Github API: Can be used to pull additional metadata on orgs, repos, and committers</li>
 </ul></li>
 </ul>
 </section>
 <section id="transform" class="level3">
 <h3 class="anchored" data-anchor-id="transform">Transform</h3>
 <ul>
-<li>dbt is used to transform raw GH Archive github events to various views
+<li><a href="https://www.getdbt.com/">dbt</a> is used to transform raw GH Archive github events to various views
 <ul>
 <li>All events details are embedded in a json blob column and relevant event info for pulls, pushes, etc. needs to be manually extracted</li>
 </ul></li>
@@ -176,12 +177,43 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="load">Load</h3>
 <ul>
 <li>Cleaned table is uploaded to BigQuery</li>
+<li>Cleaned / enriched data includes
+<ul>
+<li>Categories / Sub-categories: DeFi, NFT, gaming; DEX, money market, derivatives, etc.</li>
+<li>Developer activity
+<ul>
+<li>Issues
+<ul>
+<li>Open / Close</li>
+<li>Counts</li>
+</ul></li>
+<li>Pull Requests</li>
+<li>Push / Commits</li>
+<li>Stars</li>
+<li>Committer Stats
+<ul>
+<li>Location</li>
+<li>Commit counts</li>
+</ul></li>
+<li>Repo stats
+<ul>
+<li>Tags</li>
+<li>Languages</li>
+<li>Forks</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="analytics" class="level3">
 <h3 class="anchored" data-anchor-id="analytics">Analytics</h3>
 <ul>
-<li>Dashboard then pulls from the final cleaned table to visualize useful stats</li>
+<li>Dashboard then pulls from the final cleaned table to visualize useful stats
+<ul>
+<li><a href="https://streamlit.io/">Streamlit</a></li>
+<li><a href="https://dash.plotly.com/">Plotly Dash</a></li>
+<li><a href="https://superset.apache.org/">Apache Superset</a></li>
+</ul></li>
 </ul>
 
 
