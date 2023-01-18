@@ -35,59 +35,10 @@
     "text": "Github Activity Tracker\nWorkflow is as follows:\n\nExtract\n\nRaw data is ingested from\n\nGH Archive Github Events public BigQuery table: events are filtered for organizations and repos from Capital’s cryptoecosystem tracker\nMessari: Assets API and protocols pages contains categories and other useful labels / tags\nCoingecko: Publicly traded token data including categories\nDefiLlama: API (official and unofficial) has useful data on protocols, chains, categories, etc.\nGithub API: Can be used to pull additional metadata on orgs, repos, and committers\n\n\n\n\nTransform\n\ndbt is used to transform raw GH Archive github events to various views\n\nAll events details are embedded in a json blob column and relevant event info for pulls, pushes, etc. needs to be manually extracted\n\nMetadata including categories, tags, chains, etc. are extracted from other data sources\nData cleaning pipeline then normalizes and merges data sources into a single table\n\n\n\nLoad\n\nCleaned table is uploaded to BigQuery\nCleaned / enriched data includes\n\nCategories / Sub-categories: DeFi, NFT, gaming; DEX, money market, derivatives, etc.\nDeveloper activity\n\nIssues\n\nOpen / Close\nCounts\n\nPull Requests\nPush / Commits\nStars\nCommitter Stats\n\nLocation\nCommit counts\n\nRepo stats\n\nTags\nLanguages\nForks\n\n\n\nThis enables various analytics and visualizations – see OSS Insight for example.\n\n\n\nAnalytics\n\nDashboard then pulls from the final cleaned table to visualize useful stats\n\nStreamlit\nPlotly Dash\nApache Superset"
   },
   {
-    "objectID": "chapters/data.html#gh-archives",
-    "href": "chapters/data.html#gh-archives",
+    "objectID": "chapters/data.html",
+    "href": "chapters/data.html",
     "title": "3  Data Sources",
-    "section": "GH Archives",
-    "text": "GH Archives\nGH Archives is an hourly archive of all events on Github published as csv files and BigQuery tables."
-  },
-  {
-    "objectID": "chapters/data.html#coingecko",
-    "href": "chapters/data.html#coingecko",
-    "title": "3  Data Sources",
-    "section": "Coingecko",
-    "text": "Coingecko"
-  },
-  {
-    "objectID": "chapters/data.html#defillama",
-    "href": "chapters/data.html#defillama",
-    "title": "3  Data Sources",
-    "section": "DefiLlama",
-    "text": "DefiLlama"
-  },
-  {
-    "objectID": "chapters/data.html#dune",
-    "href": "chapters/data.html#dune",
-    "title": "3  Data Sources",
-    "section": "Dune",
-    "text": "Dune"
-  },
-  {
-    "objectID": "chapters/data.html#thegraph",
-    "href": "chapters/data.html#thegraph",
-    "title": "3  Data Sources",
-    "section": "TheGraph",
-    "text": "TheGraph"
-  },
-  {
-    "objectID": "chapters/data.html#messari",
-    "href": "chapters/data.html#messari",
-    "title": "3  Data Sources",
-    "section": "Messari",
-    "text": "Messari"
-  },
-  {
-    "objectID": "chapters/data.html#dappradar",
-    "href": "chapters/data.html#dappradar",
-    "title": "3  Data Sources",
-    "section": "DappRadar",
-    "text": "DappRadar"
-  },
-  {
-    "objectID": "chapters/data.html#block-explorers",
-    "href": "chapters/data.html#block-explorers",
-    "title": "3  Data Sources",
-    "section": "Block Explorers",
-    "text": "Block Explorers"
+    "section": "",
+    "text": "GH Archives GH Archives is an hourly archive of all events on Github published as csv files and BigQuery tables.\nCoingecko\nDefiLlama\nDune\nTheGraph\nMessari\nDappRadar\nBlock Explorers"
   }
 ]

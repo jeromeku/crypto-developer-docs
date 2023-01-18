@@ -1,18 +1,18 @@
 # Data Sources
 
-## GH Archives
+- GH Archives
 [GH Archives](https://www.gharchive.org/) is an hourly archive of all events on Github published as csv files and BigQuery tables.
 
-## Coingecko
+- Coingecko
 
-## DefiLlama
+- DefiLlama
 
-## Dune
+- Dune
 
-## TheGraph
+- TheGraph
 
-## Messari
+- Messari
 
-## DappRadar
+- DappRadar
 
-## Block Explorers
+- Block Explorers
