@@ -1,2 +1,2 @@
 # Dune Analytics 
-![](../resources/images/dune.png)
+![](../resources/images/dune.png){width=25%}
