@@ -24,12 +24,10 @@ jobs:
       - name: Check status before autocommit
         run: git status
 
-      - name : Autocommit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name : Autocommit changes to docs
+        uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
-          commit_message: render committed docs
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          add: 'docs'
 
       - name: Check status after autocommit
         run: git status
