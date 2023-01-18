@@ -16,4 +16,8 @@
 
 ## Orchestration
 - Currently [Google Cloud Scheduler](https://cloud.google.com/scheduler) is used to refresh data sources at various intervals by calling respective Cloud Run endpoints
+    - Raw events table needs to be updated when
+        - New repos are added to Electric Capital Ecosystem
+        - New events for existing repos
+    - All downstream data assets then need to be updated
 - Evaluating workflow tools ([Prefect](https://www.prefect.io/opensource/v2/), [Dagster](https://dagster.io/)) as potential replacement.

@@ -172,7 +172,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="orchestration" class="level2">
 <h2 class="anchored" data-anchor-id="orchestration">Orchestration</h2>
 <ul>
-<li>Currently <a href="https://cloud.google.com/scheduler">Google Cloud Scheduler</a> is used to refresh data sources at various intervals by calling respective Cloud Run endpoints</li>
+<li>Currently <a href="https://cloud.google.com/scheduler">Google Cloud Scheduler</a> is used to refresh data sources at various intervals by calling respective Cloud Run endpoints
+<ul>
+<li>Raw events table needs to be updated when
+<ul>
+<li>New repos are added to Electric Capital Ecosystem</li>
+<li>New events for existing repos</li>
+</ul></li>
+<li>All downstream data assets then need to be updated</li>
+</ul></li>
 <li>Evaluating workflow tools (<a href="https://www.prefect.io/opensource/v2/">Prefect</a>, <a href="https://dagster.io/">Dagster</a>) as potential replacement.</li>
 </ul>
 

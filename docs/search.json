@@ -81,7 +81,7 @@
     "href": "chapters/workflow.html#orchestration",
     "title": "2  Workflow",
     "section": "Orchestration",
-    "text": "Orchestration\n\nCurrently Google Cloud Scheduler is used to refresh data sources at various intervals by calling respective Cloud Run endpoints\nEvaluating workflow tools (Prefect, Dagster) as potential replacement."
+    "text": "Orchestration\n\nCurrently Google Cloud Scheduler is used to refresh data sources at various intervals by calling respective Cloud Run endpoints\n\nRaw events table needs to be updated when\n\nNew repos are added to Electric Capital Ecosystem\nNew events for existing repos\n\nAll downstream data assets then need to be updated\n\nEvaluating workflow tools (Prefect, Dagster) as potential replacement."
   },
   {
     "objectID": "chapters/architecture.html#github-activity-tracker",
