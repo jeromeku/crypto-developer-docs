@@ -36,6 +36,7 @@ Workflow is as follows:
             - Tags
             - Languages
             - Forks
+- This enables various analytics and visualizations -- see [OSS Insight](https://ossinsight.io/collections/ml-ops-tools) for example.
 
 ### Analytics
 - Dashboard then pulls from the final cleaned table to visualize useful stats
