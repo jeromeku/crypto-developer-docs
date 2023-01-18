@@ -1,1 +1,9 @@
 # Deployment
+
+## Google Cloud Platform
+
+### Cloud Run
+
+### BigQuery
+
+### Cloud Storage

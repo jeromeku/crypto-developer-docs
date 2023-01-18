@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/development.html" rel="next">
-<link href="../chapters/services.html" rel="prev">
+<link href="../chapters/references.html" rel="next">
+<link href="../chapters/workflow.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-title">Architecture</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Architecture</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -95,32 +95,22 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Intro</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Sources</span></a>
+  <a href="../chapters/data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Sources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/services.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Services</span></a>
+  <a href="../chapters/workflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/architecture.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Architecture</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Development</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/deployment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Deployment</span></a>
+  <a href="../chapters/architecture.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Architecture</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -140,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-title">Architecture</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Architecture</span></h1>
 </div>
 
 
@@ -155,14 +145,48 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../resources/images/architecture.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">High-level Architecture (preliminary)</figcaption><p></p>
-</figure>
-</div>
+<p><img src="../resources/images/architecture.png" class="img-fluid"></p>
+<section id="github-activity-tracker" class="level2">
+<h2 class="anchored" data-anchor-id="github-activity-tracker">Github Activity Tracker</h2>
+<p>Workflow is as follows:</p>
+<section id="extract" class="level3">
+<h3 class="anchored" data-anchor-id="extract">Extract</h3>
+<ul>
+<li>Raw data is ingested from
+<ul>
+<li>GH Archive Github Events public BigQuery table: events are filtered for organizations and repos from Capital’s cryptoecosystem tracker</li>
+<li>Messari</li>
+<li>Coingecko</li>
+<li>DefiLlama</li>
+</ul></li>
+</ul>
+</section>
+<section id="transform" class="level3">
+<h3 class="anchored" data-anchor-id="transform">Transform</h3>
+<ul>
+<li>dbt is used to transform raw GH Archive github events to various views
+<ul>
+<li>All events details are embedded in a json blob column and relevant event info for pulls, pushes, etc. needs to be manually extracted</li>
+</ul></li>
+<li>Metadata including categories, tags, chains, etc. are extracted from other data sources</li>
+<li>Data cleaning pipeline then normalizes and merges data sources into a single table</li>
+</ul>
+</section>
+<section id="load" class="level3">
+<h3 class="anchored" data-anchor-id="load">Load</h3>
+<ul>
+<li>Cleaned table is uploaded to BigQuery</li>
+</ul>
+</section>
+<section id="analytics" class="level3">
+<h3 class="anchored" data-anchor-id="analytics">Analytics</h3>
+<ul>
+<li>Dashboard then pulls from the final cleaned table to visualize useful stats</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -300,13 +324,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/services.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Services</span></span>
+      <a href="../chapters/workflow.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/development.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Development</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

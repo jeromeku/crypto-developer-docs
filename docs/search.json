@@ -1,86 +1,93 @@
 [
   {
-    "objectID": "index.html#intro",
-    "href": "index.html#intro",
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
     "title": "Bitgo Research Onchain Data Hub",
-    "section": "Intro",
-    "text": "Intro\n\nDetails the various data sources and services underlying the Bitgo Research Onchain Data Hub."
+    "section": "Introduction",
+    "text": "Introduction\n\nDocumentation for Bitgo Research’s various on-chain data and services.\n\nCrypto Developer Tracker\n\n\nwBTC Analytics (pending)"
   },
   {
     "objectID": "chapters/data.html#gh-archives",
     "href": "chapters/data.html#gh-archives",
-    "title": "Data Sources",
+    "title": "1  Data Sources",
     "section": "GH Archives",
-    "text": "GH Archives\nGH Archives is an hourly archive of all events on Github."
+    "text": "GH Archives\nGH Archives is an hourly archive of all events on Github published as csv files and BigQuery tables."
+  },
+  {
+    "objectID": "chapters/data.html#coingecko",
+    "href": "chapters/data.html#coingecko",
+    "title": "1  Data Sources",
+    "section": "Coingecko",
+    "text": "Coingecko"
   },
   {
     "objectID": "chapters/data.html#defillama",
     "href": "chapters/data.html#defillama",
-    "title": "Data Sources",
+    "title": "1  Data Sources",
     "section": "DefiLlama",
     "text": "DefiLlama"
   },
   {
     "objectID": "chapters/data.html#dune",
     "href": "chapters/data.html#dune",
-    "title": "Data Sources",
+    "title": "1  Data Sources",
     "section": "Dune",
     "text": "Dune"
   },
   {
     "objectID": "chapters/data.html#thegraph",
     "href": "chapters/data.html#thegraph",
-    "title": "Data Sources",
+    "title": "1  Data Sources",
     "section": "TheGraph",
     "text": "TheGraph"
   },
   {
     "objectID": "chapters/data.html#messari",
     "href": "chapters/data.html#messari",
-    "title": "Data Sources",
+    "title": "1  Data Sources",
     "section": "Messari",
     "text": "Messari"
   },
   {
     "objectID": "chapters/data.html#dappradar",
     "href": "chapters/data.html#dappradar",
-    "title": "Data Sources",
+    "title": "1  Data Sources",
     "section": "DappRadar",
     "text": "DappRadar"
   },
   {
     "objectID": "chapters/data.html#block-explorers",
     "href": "chapters/data.html#block-explorers",
-    "title": "Data Sources",
+    "title": "1  Data Sources",
     "section": "Block Explorers",
     "text": "Block Explorers"
   },
   {
-    "objectID": "chapters/services.html#extract",
-    "href": "chapters/services.html#extract",
-    "title": "Services",
-    "section": "Extract",
-    "text": "Extract"
+    "objectID": "chapters/workflow.html#development",
+    "href": "chapters/workflow.html#development",
+    "title": "2  Workflow",
+    "section": "Development",
+    "text": "Development\n\nPython scripts\nJupyter notebooks\nPapermill for parametrized execution of notebooks"
   },
   {
-    "objectID": "chapters/services.html#transform",
-    "href": "chapters/services.html#transform",
-    "title": "Services",
-    "section": "Transform",
-    "text": "Transform"
+    "objectID": "chapters/workflow.html#deployment",
+    "href": "chapters/workflow.html#deployment",
+    "title": "2  Workflow",
+    "section": "Deployment",
+    "text": "Deployment\n\nScripts / notebooks are refactored into functions that are mapped to REST API using FastAPI\nThis service is then containerized using Docker then deployed (serverless) using Google Cloud Run\nThis eases addition of new data sources and data munging code to be incorporated into the data pipeline"
   },
   {
-    "objectID": "chapters/services.html#load",
-    "href": "chapters/services.html#load",
-    "title": "Services",
-    "section": "Load",
-    "text": "Load"
+    "objectID": "chapters/workflow.html#orchestration",
+    "href": "chapters/workflow.html#orchestration",
+    "title": "2  Workflow",
+    "section": "Orchestration",
+    "text": "Orchestration\n\nCurrently Google Cloud Scheduler is used to refresh data sources at various intervals by calling respective Cloud Run endpoints\nEvaluating workflow tools (Prefect, Dagster) as potential replacement."
   },
   {
-    "objectID": "chapters/architecture.html",
-    "href": "chapters/architecture.html",
-    "title": "Architecture",
-    "section": "",
-    "text": "High-level Architecture (preliminary)"
+    "objectID": "chapters/architecture.html#github-activity-tracker",
+    "href": "chapters/architecture.html#github-activity-tracker",
+    "title": "3  Architecture",
+    "section": "Github Activity Tracker",
+    "text": "Github Activity Tracker\nWorkflow is as follows:\n\nExtract\n\nRaw data is ingested from\n\nGH Archive Github Events public BigQuery table: events are filtered for organizations and repos from Capital’s cryptoecosystem tracker\nMessari\nCoingecko\nDefiLlama\n\n\n\n\nTransform\n\ndbt is used to transform raw GH Archive github events to various views\n\nAll events details are embedded in a json blob column and relevant event info for pulls, pushes, etc. needs to be manually extracted\n\nMetadata including categories, tags, chains, etc. are extracted from other data sources\nData cleaning pipeline then normalizes and merges data sources into a single table\n\n\n\nLoad\n\nCleaned table is uploaded to BigQuery\n\n\n\nAnalytics\n\nDashboard then pulls from the final cleaned table to visualize useful stats"
   }
 ]

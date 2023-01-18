@@ -9,13 +9,14 @@ book:
   chapters:
     - index.qmd
     - chapters/data.qmd
+    - chapters/workflow.qmd
       # chapters:
       #   - chapters/github-archives.qmd
       #   - chapters/github-api.qmd
       #   - chapters/messari.qmd
       #   - chapters/dune.qmd
       #   - chapters/defillama.qmd
-    - chapters/services.qmd
+    #- chapters/services.qmd
       # chapters: 
       #   - chapters/extract.qmd
       #   - chapters/transform.qmd
@@ -24,8 +25,8 @@ book:
       # chapters: 
       #   - chapters/gcp.qmd
       #   - chapters/workflow.qmd
-    - chapters/development.qmd
-    - chapters/deployment.qmd
+    # - chapters/development.qmd
+    # - chapters/deployment.qmd
     - chapters/references.qmd
   sidebar: 
     background: "#F5F5F5"
@@ -39,9 +40,9 @@ format:
       light: cosmo
     backgroundcolor: "#F5F5F5"
     toc: true
-    toc-depth: 0
-    number-sections: false
-    number-depth: 0
+    toc-depth: 1
+    number-sections: true
+    number-depth: 1
   # pdf:
   #   documentclass: scrreprt
 

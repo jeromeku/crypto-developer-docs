@@ -1,1 +1,15 @@
 # Workflow
+
+## Development
+- Python scripts
+- Jupyter notebooks
+- [Papermill](https://papermill.readthedocs.io/en/latest/) for parametrized execution of notebooks
+
+## Deployment
+- Scripts / notebooks are refactored into functions that are mapped to REST API using [FastAPI](https://fastapi.tiangolo.com/) 
+- This service is then containerized using Docker then deployed (serverless) using Google Cloud Run
+- This eases addition of new data sources and data munging code to be incorporated into the data pipeline
+
+## Orchestration
+- Currently Google Cloud Scheduler is used to refresh data sources at various intervals by calling respective Cloud Run endpoints
+- Evaluating workflow tools (Prefect, Dagster) as potential replacement.
