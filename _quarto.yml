@@ -41,8 +41,8 @@ format:
     toc-depth: 0
     number-sections: false
     number-depth: 0
-  pdf:
-    documentclass: scrreprt
+  # pdf:
+  #   documentclass: scrreprt
 
 
 
