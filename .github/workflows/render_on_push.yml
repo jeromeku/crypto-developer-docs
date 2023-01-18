@@ -25,9 +25,17 @@ jobs:
         run: git status
 
       - name : Autocommit changes to docs
+        id: autocommit
         uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
           add: 'docs'
 
       - name: Check status after autocommit
         run: git status
+
+      - name: Check autocommit outputs
+        run: |
+          echo "Autocommitted: $COMMITTED\n Commit SHA: $COMMIT_SHA"
+        env:
+          COMMITTED: ${{ steps.autocommit.outputs.committed }}
+          COMMIT_SHA: ${{ steps.autocommit.outputs.commit_sha }}
